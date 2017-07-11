@@ -27,12 +27,6 @@ class Core:
     def devOnly(ctx):
         return ctx.message.author.id in ["174918559539920897", "269543926803726336", "186295030388883456", "220568440161697792", "155347730225561600", "223814431946178560"]
 
-    @commands.command(pass_context=True)
-    async def echo(self, ctx, *args):
-        """echos whatever you say"""
-        await self.bot.say('{}'.format(' '.join(args)))
-        await self.bot.delete_message(ctx.message)
-
     @commands.command(pass_context=True, no_pm=True)
     @commands.check(devOnly)
     async def reload(self, ctx):
